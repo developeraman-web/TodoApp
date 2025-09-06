@@ -33,7 +33,7 @@ function Login(){
 
      localStorage.setItem("userName",userName);
      localStorage.setItem("token",token);
-     window.location.href = "http://localhost:3000/tasks";
+     window.location.href = "http://your-todoapp.vercel.app/tasks";
 
    }catch(error){
     let errObj = {message:error.response.data.message};

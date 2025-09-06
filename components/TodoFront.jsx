@@ -170,7 +170,7 @@ export default function TodoFront() {
   const handleLogout = ()=>{
     localStorage.removeItem("token");
     localStorage.removeItem("userName")
-    window.location.href = 'http://localhost:3000/';
+    window.location.href = 'http://your-todoapp.vercel.app/';
   }
 
   return (

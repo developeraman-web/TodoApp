@@ -79,7 +79,7 @@ export default function TodoFront() {
     }catch(error){
       setSessionExpired(true);
       setInterval(()=>{
-        window.location.href = 'http://localhost:3000/';
+        window.location.href = 'http://your-todoapp.vercel.app/';
       },4000)
 
     }

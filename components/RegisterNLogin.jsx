@@ -33,11 +33,12 @@ function Login(){
 
      localStorage.setItem("userName",userName);
      localStorage.setItem("token",token);
-     window.location.href = "http://your-todoapp.vercel.app/tasks";
+     window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/tasks`;
 
    }catch(error){
     let errObj = {message:error.response.data.message};
     setMessage(errObj.message || "something went wrong!");
+    setSuccess(false);
     setOpenToast(true);
    }finally{
     reset();
@@ -76,7 +77,7 @@ function Login(){
      placeholder='  Password'/>
    </div>
 
-          <button className='border-2 border-black max-w-fit self-center my-3 bg-sky-400 border-none text-white shadow-sky-300 shadow-sm' type='submit'>Login</button>
+          <button className='border-2 border-black max-w-fit self-center my-3 bg-sky-400 border-none text-white shadow-sky-300 shadow-sm duration-300' type='submit'>Login</button>
     </form>
     {loginErrors.message && <p>{loginErrors.message}</p>}
     <div className='text-center'>Don't have an account? <a className='text-sky-400 font-bold' href='' onClick={(e)=>{e.preventDefault(); setForm(false)}}>Register</a></div>
@@ -155,10 +156,10 @@ function Register(){
      className='px-10 py-2 ring-sky-200'
      placeholder='  Password'
       />
-   <button type='button' className='cursor-pointer p-3 absolute right-2 top-1/2 -translate-y-1/2 ' onClick={()=>setShowPass(!showPass)}>{showPass? <FaEye /> :<IoMdEyeOff />}</button>
+   <button type='button' className='cursor-pointer p-3 absolute right-2 top-1/2 -translate-y-1/2' onClick={()=>setShowPass(!showPass)}>{showPass? <FaEye /> :<IoMdEyeOff />}</button>
 
    </div>
-          <button className='border-2 border-black max-w-fit self-center my-3 bg-sky-400 border-none text-white shadow-sky-300 shadow-sm' type='submit'>Create Account</button>
+          <button className='border-2 border-black max-w-fit self-center my-3 bg-sky-400 border-none text-white shadow-sky-300 shadow-sm duration-300' type='submit'>Create Account</button>
             
             
       </form>

@@ -7,15 +7,15 @@ table{
 
 th,.task-table tbody td{
   text-align: center;
-  width: 33%;
-  border: 2px solid skyblue;
-  @apply md:py-1 py-2
+  border-bottom: 2px solid skyblue;
+  @apply md:py-1 py-2 text-[19px]
 }
 
-/* input{
-  border: 1px solid black !important;
-  border-radius: 5px;
-} */
+th{
+  @apply border-none bg-amber-200/40
+}
+
+
 
 #loginform > div ,  #signupform  > div {
   display: flex;
@@ -60,9 +60,7 @@ th,.task-table tbody td{
 }
 
 button:hover{
-  /* animation: alive 0.6s ease;
-  animation-fill-mode: forwards; */
-  transform: scale(1.1);
+ border-radius: 50px;
 }
 
 #confirmDelete-icon{
